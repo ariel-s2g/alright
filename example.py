@@ -1,13 +1,14 @@
-# If you DO NOT have the WhatsApp Desktop app installed
-from alright import WhatsApp
-messenger = WhatsApp()
-messenger.find_user('2556929069077')
-messenger.send_message("hey I'm done its tuesday ")
-input()
-
-# If you DO have the WhatsApp Desktop app installed
 from alright import WhatsApp
 
-msg = "hey I'm done its tuesday"
+
+
+msg = msg = open('message.txt', 'r', encoding='utf-8-sig').read()
+
 messenger = WhatsApp()
-messenger.send_message1('2556929069077', msg)
+# messenger.find_user('972509931102')
+with open('1.csv') as f:
+    numbers = f.read().splitlines()
+
+for number in numbers:
+    messenger.send_message1(number, msg)
+
